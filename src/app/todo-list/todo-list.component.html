@@ -1,0 +1,32 @@
+<div class="container">
+    <h2 class="mt-4 mb-3">Task List</h2>
+    <!-- (change)="setFilter($event) -->
+    <div class="row">
+        <div class="col-sm-6">
+            <input type="text" class="form-control" placeholder="Search By Status " [(ngModel)]="searchStatus">
+        </div>
+        <!-- <div class="col-md-4 mb-3">
+            <select class="form-select">
+                <option value="">All</option>
+                <option value="complete">Complete</option>
+                <option value="incomplete">Incomplete</option>
+            </select>
+        </div> -->
+        <div class="col-md-6 mb-3 text-end">
+            <a class="btn btn-primary" routerLink="/form">Add Task</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex align-items-center" *ngFor="let task of tasks | filter: searchStatus">
+            <div class="form-check flex-grow-1">
+              <label class="form-check-label">{{ task.name }}</label>
+            </div>
+            <div class="mr-3">{{ task.status }}</div>
+            <button class="btn btn-danger" (click)="chengStatus(task)">Change Status</button>
+          </li>
+        </ul>
+      </div>
+      
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <form action="" [formGroup]="todoList"  (ngSubmit)="addTask()">
+                <div class="form-group ">
+                    <label for="proTitle">Task Name</label>
+                    <input type="email" class="form-control" id="proTitle" formControlName="name">
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                </form>
+        </div>
+    </div>
+</div>
+
+
